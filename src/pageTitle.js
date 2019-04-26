@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
     display:grid;
     grid-template-columns: minmax(24px,auto) minmax(auto,1200px) minmax(24px,auto);
-    background: #fff;
+    background: rgba(239, 242, 245,0.5);
     padding: 16px 32px 16px;
     border-bottom: 1px solid #e8e8e8;
     height:137px;

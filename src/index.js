@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import axios from 'axios'
+import { FocusStyleManager } from "@blueprintjs/core";
+ 
+FocusStyleManager.onlyShowFocusOnTabs();
 
 axios.defaults.headers.put["Content-Type"] = "application/json"
 
