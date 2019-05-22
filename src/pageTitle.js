@@ -21,7 +21,10 @@ const PageTitle = () => {
       <div>
           <span className="bp3-text-muted"> Home / Cases / CASE0000007</span>
           <Title className="bp3-heading">Viverra nec felis. Vivamus aliquet, metus non sagi...</Title>
+          {/*
           <span className="bp3-text-large">Ut neque nunc, consectetur a elementum a, viverra nec felis. Vivamus aliquet, metus non sagittis dictum, justo leo rutru...</span>
+          */}
+          <span className="bp3-text-muted">Opened 7 days ago by Andrew Pishchuiln. Modified yesterday by Alex Bondo.</span>
       </div>
       <div></div>
     </Wrapper>

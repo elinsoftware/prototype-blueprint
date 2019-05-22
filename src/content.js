@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import {
   AnchorButton,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  NavbarDivider
 } from "@blueprintjs/core";
+import SectionOne from './section-one'
 
 const Box = styled.div`
     box-sizing: border-box;
@@ -17,8 +19,10 @@ const BoxHeader = styled.div`
   border: 1px solid #d1d5da;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  padding: 16px;
+  padding: 8px;
   width:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `
 const BoxContent = styled.div`
   border-bottom-left-radius: 2px;
@@ -30,19 +34,27 @@ const BoxContent = styled.div`
   padding:16px;
   width:100%;
 `
+const Caption = styled.div`
+  align-self: center;
+  font-size:16px;
+  font-weight:600;
+`
 
 const Content = () => {
   return (
     <Box>
       <BoxHeader>
-        <ButtonGroup>
+      <Caption>
+        Case Data
+      </Caption>
+        <ButtonGroup style={{alignSelf:"center",justifySelf:"end"}} minimal>
           <Button icon="database">Queries</Button>
           <Button icon="function">Functions</Button>
           <AnchorButton icon="cog" rightIcon="settings">Options</AnchorButton>
         </ButtonGroup>
       </BoxHeader>
       <BoxContent>
-      <p>la la la</p>
+      <SectionOne/>
       </BoxContent>
     </Box>
   )
