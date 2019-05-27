@@ -17,7 +17,7 @@ import "./LeftSidebar.css";
 import mockdata from "./mock.json";
 import { buildListNodes, buildTreeNodes } from "./utils";
 
-const { listData, treeData } = mockdata;
+const { listData, treeData, tasksData } = mockdata;
 
 const Divider = ({ title }) => (
   <div className="custom-menu-divider">
@@ -96,6 +96,19 @@ const FirstPanel = () => {
         <div className="tree-wrapper">
           <Tree
             contents={treeNodes}
+            onNodeExpand={handleNodeExpand}
+            onNodeCollapse={handleNodeCollapse}
+            onNodeClick={handleNodeClick}
+          />
+        </div>
+      </Section>
+
+      <Divider title="tasks" />
+
+      <Section title="Assigned Tasks" action="New">
+        <div className="tree-wrapper flat">
+          <Tree
+            contents={tasksData}
             onNodeExpand={handleNodeExpand}
             onNodeCollapse={handleNodeCollapse}
             onNodeClick={handleNodeClick}

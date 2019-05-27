@@ -1,4 +1,21 @@
 {
+  "tasksData": [
+    {
+      "label": "TSK000363: Create PDF memo for annual meeting",
+      "icon": "document",
+      "id": 146235
+    },
+    {
+      "label": "TSK000926: Archive APM forms",
+      "icon": "document",
+      "id": 1462359
+    },
+    {
+      "label": "TSK000992: Collect PPF statistics from stakeholders",
+      "icon": "document",
+      "id": 1462357
+    }
+  ],
   "listData": [
     {
       "label": "Past due tasks",
@@ -14,11 +31,6 @@
       "label": "SLA Breached",
       "icon": "issue",
       "id": 1462357
-    },
-    {
-      "label": "Very long list item title that is truncated by my code",
-      "icon": "document",
-      "id": 141234
     }
   ],
   "treeData": [
