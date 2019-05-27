@@ -92,7 +92,7 @@ const FirstPanel = () => {
 
       <Divider title="cases" />
 
-      <Section title="Open Cases">
+      <Section title="Open Cases" action="Expand">
         <div className="tree-wrapper">
           <Tree
             contents={treeNodes}

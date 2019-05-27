@@ -23,36 +23,64 @@
   ],
   "treeData": [
     {
-      "label": "Folder",
+      "label": "CSE000762: Annual Reporting",
       "folder": true,
       "id": 512362
     },
     {
-      "label": "Folder",
+      "label": "CSE000739: APM Form collection process and org structure",
       "folder": true,
       "isExpanded": true,
       "id": 812352,
       "childNodes": [
         {
-          "label": "List item",
+          "label": "Collect signatures from stakeholders",
           "folder": false,
           "id": 849158
         },
         {
-          "label": "Folder",
+          "label": "Tasks",
           "folder": true,
           "isExpanded": false,
           "id": 919292,
           "childNodes": [
             {
-              "label": "Very long list item that gets truncated",
+              "label": "Collect org data from all departments",
               "folder": false,
               "id": 719252
             },
             {
-              "label": "List Item",
+              "label": "Compile PDF doc",
               "folder": false,
               "id": 195299
+            },
+            {
+              "label": "Submit org structure for signatures",
+              "folder": false,
+              "id": 1953299
+            }
+          ]
+        },
+        {
+          "label": "Approvals",
+          "folder": true,
+          "isExpanded": false,
+          "id": 919292,
+          "childNodes": [
+            {
+              "label": "Alex Bono",
+              "folder": false,
+              "id": 719252
+            },
+            {
+              "label": "Niki Heily",
+              "folder": false,
+              "id": 195299
+            },
+            {
+              "label": "Antonio Moreno",
+              "folder": false,
+              "id": 1953299
             }
           ]
         }
