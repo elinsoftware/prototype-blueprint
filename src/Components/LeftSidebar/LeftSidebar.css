@@ -19,7 +19,7 @@
 
 .left-sidebar {
   background-color: #f4f8fb;
-  max-width: 350px;
+  width: 350px;
   overflow: scroll;
   flex-grow: 2;
   position: absolute;
