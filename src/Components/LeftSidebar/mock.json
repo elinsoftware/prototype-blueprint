@@ -1,0 +1,62 @@
+{
+  "listData": [
+    {
+      "label": "Very long list item title that is truncated by my code",
+      "icon": "document",
+      "id": 141234
+    },
+    {
+      "label": "Selected list item",
+      "icon": "document",
+      "id": 146235
+    }
+  ],
+  "treeData": [
+    {
+      "label": "Folder",
+      "folder": true,
+      "id": 512362
+    },
+    {
+      "label": "Folder",
+      "folder": true,
+      "isExpanded": true,
+      "id": 812352,
+      "childNodes": [
+        {
+          "label": "List item",
+          "folder": false,
+          "id": 849158
+        },
+        {
+          "label": "Folder",
+          "folder": true,
+          "isExpanded": false,
+          "id": 919292,
+          "childNodes": [
+            {
+              "label": "Very long list item that gets truncated",
+              "folder": false,
+              "id": 719252
+            },
+            {
+              "label": "List Item",
+              "folder": false,
+              "id": 195299
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Folder",
+      "folder": true,
+      "id": 519252
+    },
+    {
+      "label": "List item",
+      "folder": false,
+      "id": 851972
+    }
+  ]
+}

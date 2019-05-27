@@ -1,26 +1,25 @@
-import React from 'react';
-import Header from './header'
-import PageTitle from './pageTitle'
-import Content from './content'
-import './App.css'
+import React from "react";
+import Header from "./Components/Header/Header";
+import LeftSidebar from "./Components/LeftSidebar/LeftSidebar";
+import ContentFrame from "./Components/ContentFrame/ContentFrame";
+import { Classes } from "@blueprintjs/core";
+import useStoreon from "storeon/react";
+import "./App.css";
+
+// DONE: LIST and TREE sections
+// DONE: toggle theme button
+// ? TODO: better sidebar scroll as in ServiceNow App Navigator
 
 const App = () => {
+  const { darkTheme } = useStoreon("darkTheme");
+
   return (
-    <>
-      <Header/>
-      <PageTitle />
-      <div style={{ minHeight: '75vh', margin: '40px 0', display: 'grid', gridTemplateColumns: 'minmax(24px,auto) minmax(auto,1200px) minmax(24px,auto)', gridTemplateRows: '100px auto', gridRowGap: '26px' }} >
-            <div></div>
-            <div>
-              <Content/>
-            </div>
-            <div></div>
-        </div>
-      <div className="footer">
-        <a href="https://elinsoftware.com" target="_blank" rel="noopener noreferrer" className="footerLink">Powered by ELIN Software</a>
-      </div>
-    </>
-  )
-}
+    <div id="app" className={darkTheme ? Classes.DARK : ""}>
+      <Header />
+      <LeftSidebar />
+      <ContentFrame />
+    </div>
+  );
+};
 
 export default App;

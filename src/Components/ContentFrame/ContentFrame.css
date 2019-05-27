@@ -1,0 +1,12 @@
+#content-frame {
+  background-color: #6968aa;
+  position: absolute;
+  top: 50px;
+  left: 350px;
+  right: 0;
+  bottom: 0;
+}
+
+.content-wrapper {
+  padding: 1rem;
+}

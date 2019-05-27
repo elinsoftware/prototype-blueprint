@@ -1,0 +1,7 @@
+.bp3-dark .bp3-navbar {
+  background-color: #293742;
+}
+
+.bp3-navbar {
+  z-index: 150;
+}
