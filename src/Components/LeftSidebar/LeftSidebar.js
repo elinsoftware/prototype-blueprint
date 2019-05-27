@@ -84,15 +84,15 @@ const FirstPanel = () => {
         <InputGroup leftIcon="search" round={true} placeholder="Search input" />
       </Section>
 
-      <Section title="List">
+      <Section title="Status" action="Add">
         <div className="tree-wrapper flat">
           <Tree contents={listData} />
         </div>
       </Section>
 
-      <Divider title="and" />
+      <Divider title="cases" />
 
-      <Section title="Tree">
+      <Section title="Open Cases">
         <div className="tree-wrapper">
           <Tree
             contents={treeNodes}
@@ -154,12 +154,12 @@ export default function LeftSidebar(props) {
   return (
     <div className="left-sidebar bp3-elevation-2">
       <div className="sidebar-header ">
-        <h2>sidebar</h2>
+        <h2>workspace</h2>
         <Icon icon="menu-closed" className="icon-btn" />
       </div>
       <Tabs onChange={handleTabChange} selectedTabId={tab}>
-        <Tab id="first" title="First tab" panel={<FirstPanel />} />
-        <Tab id="second" title="Second tab" panel={<SecondPanel />} />
+        <Tab id="first" title="Active Items" panel={<FirstPanel />} />
+        <Tab id="second" title="History" panel={<SecondPanel />} />
       </Tabs>
       <div className="sidebar-footer">
         <Button fill={true} icon="add">

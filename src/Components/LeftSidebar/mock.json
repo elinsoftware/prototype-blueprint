@@ -1,14 +1,24 @@
 {
   "listData": [
     {
+      "label": "Past due tasks",
+      "icon": "outdated",
+      "id": 146235
+    },
+    {
+      "label": "Pending approvals",
+      "icon": "confirm",
+      "id": 1462359
+    },
+    {
+      "label": "SLA Breached",
+      "icon": "issue",
+      "id": 1462357
+    },
+    {
       "label": "Very long list item title that is truncated by my code",
       "icon": "document",
       "id": 141234
-    },
-    {
-      "label": "Selected list item",
-      "icon": "document",
-      "id": 146235
     }
   ],
   "treeData": [
