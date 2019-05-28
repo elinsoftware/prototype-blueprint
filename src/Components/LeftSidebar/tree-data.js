@@ -10,8 +10,10 @@ import {
   Button,
   Elevation,
   Tooltip,
-  Tag
+  Tag,
+  Position
 } from "@blueprintjs/core";
+
 const treeDataStructure = [
     {
       "label": "CSE000762: Annual Reporting",
@@ -37,7 +39,7 @@ const treeDataStructure = [
           "isExpanded": false,
           "id": 91929232,
           "secondaryLabel": (
-            <Button minimal intent="primary"><small>new</small></Button>
+            <Button minimal icon="add"/>
         ),
           "childNodes": [
             {
@@ -93,7 +95,30 @@ const treeDataStructure = [
               "id": 19536299
             }
           ]
-        }
+        },
+        {
+            "label": "Documents",
+            "folder": true,
+            "isExpanded": false,
+            "id": 9194222292,
+            "secondaryLabel": (
+                <Tooltip content="Upload a new document" position={Position.RIGHT}>
+                <Button minimal icon="add"/>
+                </Tooltip>
+            ),
+            "childNodes": [
+              {
+                "label": "Org structure.pdf",
+                "folder": false,
+                "id": 7192334252
+              },
+              {
+                "label": "PMK form 2018.docx",
+                "folder": false,
+                "id": 192355299
+              }
+            ]
+          }
       ]
     },
     {
