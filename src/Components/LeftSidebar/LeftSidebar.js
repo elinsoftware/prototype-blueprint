@@ -88,6 +88,7 @@ const ApprovalItem = ({ title }) => (
 
 const FirstPanel = () => {
   const [treeNodes, setTreeNodes] = useState([]);
+  const [selectedTreeNode, setSelectedTreeNode] = useState({})
 
   useEffect(() => {
     const builtTreeNodes = treeDataStructure.map(node => {
@@ -116,6 +117,15 @@ const FirstPanel = () => {
 
   const handleNodeClick = treeNode => {
     console.log("Tree node clicked", treeNode);
+
+    // deselect current
+    selectedTreeNode.isSelected = false
+
+    // select clicked one
+    treeNode.isSelected = true
+
+    // update current
+    setSelectedTreeNode(treeNode)
   };
 
   return (
@@ -126,7 +136,7 @@ const FirstPanel = () => {
 
       <Section title="Status" action="Add">
         <div className="tree-wrapper flat">
-          <Tree contents={statsList} />
+          <Tree contents={statsList} onNodeClick={handleNodeClick} />
         </div>
       </Section>
 
