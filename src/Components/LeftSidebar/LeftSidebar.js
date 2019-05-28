@@ -8,7 +8,6 @@ import {
   Checkbox,
   ProgressBar,
   Button,
-  Tag,
   Classes
 } from "@blueprintjs/core";
 import useStoreon from "storeon/react";
@@ -17,7 +16,7 @@ import Section from "./Section";
 import "./LeftSidebar.css";
 import mockdata from "./mock.js";
 
-const { tasksData, treeData } = mockdata;
+const { statsList, tasksData, treeData } = mockdata;
 
 const Divider = ({ title }) => (
   <div className="custom-menu-divider">
@@ -28,33 +27,6 @@ const Divider = ({ title }) => (
     )}
   </div>
 );
-
-const statsList = [
-  {
-    "label": "Past due tasks",
-    "icon": "outdated",
-    "id": 141246235,
-    "secondaryLabel": (
-      <Tag intent="danger">4</Tag>
-    )
-  },
-  {
-    "label": "Pending approvals",
-    "icon": "confirm",
-    "id": 146212359,
-    "secondaryLabel": (
-      <Tag intent="warning">2</Tag>
-    )
-  },
-  {
-    "label": "SLA Breached",
-    "icon": "issue",
-    "id": 14624357,
-    "secondaryLabel": (
-      <Tag intent="primary">0</Tag>
-    )
-  }
-]
 
 const CheckboxItem = ({ title, number, progress, selected }) => (
   <div className="checkbox-wrapper">
@@ -106,13 +78,10 @@ const FirstPanel = () => {
 
   const handleNodeClick = treeNode => {
     console.log("Tree node clicked", treeNode);
-
     // deselect current
     selectedTreeNode.isSelected = false
-
     // select clicked one
     treeNode.isSelected = true
-
     // update current
     setSelectedTreeNode(treeNode)
   };

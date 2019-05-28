@@ -1,7 +1,33 @@
 import React from 'react'
-import { Button, Icon, Tooltip, Position } from '@blueprintjs/core'
+import { Button, Tag, Icon, Tooltip, Position } from '@blueprintjs/core'
 
 const data = {
+  statsList: [
+    {
+      "label": "Past due tasks",
+      "icon": "outdated",
+      "id": 141246235,
+      "secondaryLabel": (
+        <Tag intent="danger">4</Tag>
+      )
+    },
+    {
+      "label": "Pending approvals",
+      "icon": "confirm",
+      "id": 146212359,
+      "secondaryLabel": (
+        <Tag intent="warning">2</Tag>
+      )
+    },
+    {
+      "label": "SLA Breached",
+      "icon": "issue",
+      "id": 14624357,
+      "secondaryLabel": (
+        <Tag intent="primary">0</Tag>
+      )
+    }
+  ],
   "tasksData": [
     {
       "label": "TSK000363: Create PDF memo for annual meeting",
