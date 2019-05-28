@@ -7,10 +7,12 @@ export default function Section(props) {
   return (
     <div className="panel-section">
       <div className="panel-section--header">
-        <h3>{title}</h3>
-        <Button minimal={true} intent="primary">
+        {title && <h3>{title}</h3>
+        }
+        {action &&<Button minimal={true} intent="primary">
           <small>{action}</small>
         </Button>
+        }
       </div>
       {children}
     </div>

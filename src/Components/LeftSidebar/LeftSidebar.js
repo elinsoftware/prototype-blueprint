@@ -46,6 +46,17 @@ const CheckboxItem = ({ title, number, progress, selected }) => (
   </div>
 );
 
+const ApprovalItem = ({ title }) => (
+  <div className="checkbox-wrapper">
+    <span>{title}</span>
+    <div style={{ width: "80px", display: "flex", alignItems: "center" }}>
+        <Button minimal={true} intent="success">
+          <small>Approve</small>
+        </Button>
+    </div>
+  </div>
+);
+
 const FirstPanel = () => {
   const [treeNodes, setTreeNodes] = useState([]);
 
@@ -92,7 +103,7 @@ const FirstPanel = () => {
 
       <Divider title="cases" />
 
-      <Section title="Open Cases" action="Expand">
+      <Section title="Open Cases" action="View All">
         <div className="tree-wrapper">
           <Tree
             contents={treeNodes}
@@ -105,7 +116,7 @@ const FirstPanel = () => {
 
       <Divider title="tasks" />
 
-      <Section title="Assigned Tasks" action="New">
+      <Section title="Assigned Tasks" action="View All">
         <div className="tree-wrapper flat">
           <Tree
             contents={tasksData}
@@ -116,9 +127,18 @@ const FirstPanel = () => {
         </div>
       </Section>
 
-      <Divider />
-
+      <Divider title="approvals"/>
+      <Section title="pending requests" action="View All">
+      <ApprovalItem
+        title="CSE0009832: Lorem ipsum bono"
+        />
+        <ApprovalItem
+        title="TASK000981: Create memo binder"
+        />
+      </Section>
+      <Divider/>
       <Section title="Section title">
+       
         <p>Selected</p>
         <CheckboxItem
           selected={true}
