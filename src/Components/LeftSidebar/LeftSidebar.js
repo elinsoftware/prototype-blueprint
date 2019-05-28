@@ -8,12 +8,14 @@ import {
   Checkbox,
   ProgressBar,
   Button,
-  Elevation
+  Elevation,
+  Tooltip,
+  Tag
 } from "@blueprintjs/core";
 
 import Section from "./Section";
 import "./LeftSidebar.css";
-
+import treeDataStructure from './tree-data'
 import mockdata from "./mock.json";
 import { buildListNodes, buildTreeNodes } from "./utils";
 
@@ -28,6 +30,33 @@ const Divider = ({ title }) => (
     )}
   </div>
 );
+
+const statsList = [
+  {
+    "label": "Past due tasks",
+    "icon": "outdated",
+    "id": 141246235,
+    "secondaryLabel": (
+                  <Tag intent="danger">4</Tag>
+              )
+  },
+  {
+    "label": "Pending approvals",
+    "icon": "confirm",
+    "id": 146212359,
+    "secondaryLabel": (
+      <Tag intent="warning">2</Tag>
+    )
+  },
+  {
+    "label": "SLA Breached",
+    "icon": "issue",
+    "id": 14624357,
+    "secondaryLabel": (
+      <Tag intent="primary">0</Tag>
+  )
+  }
+]
 
 const CheckboxItem = ({ title, number, progress, selected }) => (
   <div className="checkbox-wrapper">
@@ -61,7 +90,7 @@ const FirstPanel = () => {
   const [treeNodes, setTreeNodes] = useState([]);
 
   useEffect(() => {
-    const builtTreeNodes = treeData.map(node => {
+    const builtTreeNodes = treeDataStructure.map(node => {
       if (node.folder) {
         node.icon = node.isExpanded ? "folder-open" : "folder-close";
       } else {
@@ -97,7 +126,7 @@ const FirstPanel = () => {
 
       <Section title="Status" action="Add">
         <div className="tree-wrapper flat">
-          <Tree contents={listData} />
+          <Tree contents={statsList} />
         </div>
       </Section>
 
