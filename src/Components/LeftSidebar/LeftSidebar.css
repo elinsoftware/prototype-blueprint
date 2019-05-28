@@ -25,7 +25,7 @@
   position: absolute;
   top: 50px;
   bottom: 0;
-  z-index: 100;
+  z-index: 5;
 }
 
 .sidebar-header {
@@ -37,11 +37,11 @@
   font-family: "Rajdhani", sans-serif;
 }
 
-.bp3-dark .left-sidebar {
+.bp3-dark.left-sidebar {
   background-color: #293742;
 }
 
-.bp3-dark .left-sidebar .sidebar-header {
+.bp3-dark.left-sidebar .sidebar-header {
   border-color: #3a4854;
 }
 

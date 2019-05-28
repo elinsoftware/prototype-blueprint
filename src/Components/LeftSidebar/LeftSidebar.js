@@ -8,18 +8,18 @@ import {
   Checkbox,
   ProgressBar,
   Button,
-  Elevation,
-  Tooltip,
-  Tag
+  Tag,
+  Classes
 } from "@blueprintjs/core";
+import useStoreon from "storeon/react";
 
 import Section from "./Section";
 import "./LeftSidebar.css";
 import treeDataStructure from './tree-data'
 import mockdata from "./mock.json";
-import { buildListNodes, buildTreeNodes } from "./utils";
+import { buildTreeNodes } from "./utils";
 
-const { listData, treeData, tasksData } = mockdata;
+const { tasksData } = mockdata;
 
 const Divider = ({ title }) => (
   <div className="custom-menu-divider">
@@ -37,8 +37,8 @@ const statsList = [
     "icon": "outdated",
     "id": 141246235,
     "secondaryLabel": (
-                  <Tag intent="danger">4</Tag>
-              )
+      <Tag intent="danger">4</Tag>
+    )
   },
   {
     "label": "Pending approvals",
@@ -54,7 +54,7 @@ const statsList = [
     "id": 14624357,
     "secondaryLabel": (
       <Tag intent="primary">0</Tag>
-  )
+    )
   }
 ]
 
@@ -79,9 +79,9 @@ const ApprovalItem = ({ title }) => (
   <div className="checkbox-wrapper">
     <span>{title}</span>
     <div style={{ width: "80px", display: "flex", alignItems: "center" }}>
-        <Button minimal={true} intent="success">
-          <small>Approve</small>
-        </Button>
+      <Button minimal={true} intent="success">
+        <small>Approve</small>
+      </Button>
     </div>
   </div>
 );
@@ -156,16 +156,16 @@ const FirstPanel = () => {
         </div>
       </Section>
 
-      <Divider title="approvals"/>
+      <Divider title="approvals" />
       <Section title="pending requests" action="View All">
-      <ApprovalItem
-        title="CSE0009832: Lorem ipsum bono"
+        <ApprovalItem
+          title="CSE0009832: Lorem ipsum bono"
         />
         <ApprovalItem
-        title="TASK000981: Create memo binder"
+          title="TASK000981: Create memo binder"
         />
       </Section>
-      <Divider/>
+      <Divider />
       <Section title="Case Progress" action="Add Note">
         <p>Bureau</p>
         <CheckboxItem
@@ -207,13 +207,14 @@ const SecondPanel = () => {
 
 export default function LeftSidebar(props) {
   const [tab, setTab] = useState("first");
+  const { theme: { darkSide } } = useStoreon('theme')
 
   const handleTabChange = tab => {
     setTab(tab);
   };
 
   return (
-    <div className="left-sidebar bp3-elevation-2">
+    <div className={"left-sidebar bp3-elevation-2 " + (darkSide ? Classes.DARK : '')}>
       <div className="sidebar-header ">
         <h2>workspace</h2>
         <Icon icon="menu-closed" className="icon-btn" />

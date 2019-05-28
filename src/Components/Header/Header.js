@@ -17,13 +17,14 @@ import {
   MenuItem,
   Popover,
   Position,
-  PopoverInteractionKind
+  PopoverInteractionKind,
+  Switch
 } from "@blueprintjs/core";
+import useStoreon from "storeon/react";
 
 import logo from "./logo.png";
 
 import "./Header.css";
-import { ALIGNMENT_BOTTOM } from "@blueprintjs/icons/lib/esm/generated/iconContents";
 
 const exampleMenu = (
   <Menu>
@@ -39,9 +40,44 @@ const exampleMenu = (
   </Menu>
 );
 
+
+
 const Header = () => {
+  const { dispatch, theme: { darkTop, darkSide } } = useStoreon('theme')
+
+  const handleToggleThemeTop = () => {
+    dispatch('theme/toggleTop')
+  }
+
+  const handleToggleThemeSide = () => {
+    dispatch('theme/toggleSide')
+  }
+
+  const settingsMenu = (
+    <Menu>
+      <MenuDivider title="Theme" />
+      <div style={{ padding: '0.25rem .5rem' }}>
+
+        <Switch
+          checked={darkTop}
+          label="Dark Top"
+          alignIndicator="right"
+          onChange={handleToggleThemeTop}
+        />
+
+        <Switch
+          checked={darkSide}
+          label="Dark Side"
+          alignIndicator="right"
+          onChange={handleToggleThemeSide}
+        />
+      </div>
+    </Menu>
+
+  )
+
   return (
-    <>
+    <div className={darkTop ? Classes.DARK : ''}>
       <Navbar>
         <NavbarGroup align={Alignment.LEFT}>
           <div
@@ -53,7 +89,7 @@ const Header = () => {
               paddingLeft: "1rem"
             }}
           >
-            <img src={logo} style={{ height: "30px", marginRight: "5px" }} />
+            <img src={logo} style={{ height: "30px", marginRight: "5px" }} alt="App logo" />
             <NavbarHeading>Blueprint Prototype</NavbarHeading>
           </div>
         </NavbarGroup>
@@ -84,10 +120,17 @@ const Header = () => {
           <NavbarDivider />
           <Button icon="user" minimal />
           <Button icon="notifications" minimal />
-          <Button icon="cog" minimal />
+          <Popover
+            content={settingsMenu}
+            position={Position.BOTTOM}
+            interactionKind={PopoverInteractionKind.CLICK}
+            captureDismiss={true}
+          >
+            <Button icon="cog" minimal />
+          </Popover>
         </NavbarGroup>
       </Navbar>
-    </>
+    </div>
   );
 };
 

@@ -2,8 +2,6 @@ import React from "react";
 import Header from "./Components/Header/Header";
 import LeftSidebar from "./Components/LeftSidebar/LeftSidebar";
 import ContentFrame from "./Components/ContentFrame/ContentFrame";
-import { Classes } from "@blueprintjs/core";
-import useStoreon from "storeon/react";
 import "./App.css";
 
 // DONE: LIST and TREE sections
@@ -11,10 +9,9 @@ import "./App.css";
 // ? TODO: better sidebar scroll as in ServiceNow App Navigator
 
 const App = () => {
-  const { darkTheme } = useStoreon("darkTheme");
 
   return (
-    <div id="app" className={darkTheme ? Classes.DARK : ""}>
+    <div id="app">
       <Header />
       <LeftSidebar />
       <ContentFrame />
