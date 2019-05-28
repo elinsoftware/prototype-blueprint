@@ -1,5 +1,5 @@
 export default store => {
-  store.on("@init", () => ({ theme: { darkTop: true, darkSide: true } }));
+  store.on("@init", () => ({ theme: { darkTop: true, darkSide: false } }));
 
   store.on("theme/toggleTop", (state) => {
     console.log("state was:", state);
