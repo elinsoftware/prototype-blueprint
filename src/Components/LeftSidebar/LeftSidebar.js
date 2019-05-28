@@ -32,7 +32,7 @@ const Divider = ({ title }) => (
 const CheckboxItem = ({ title, number, progress, selected }) => (
   <div className="checkbox-wrapper">
     <Checkbox checked={selected} style={{ flexGrow: 2, maxWidth: "65%" }}>
-      {title}
+      <small>{title}</small>
     </Checkbox>
     <div style={{ width: "80px", display: "flex", alignItems: "center" }}>
       <span>{number}</span>
@@ -137,33 +137,32 @@ const FirstPanel = () => {
         />
       </Section>
       <Divider/>
-      <Section title="Section title">
-       
-        <p>Selected</p>
+      <Section title="Case Progress" action="Add Note">
+        <p>Bureau</p>
         <CheckboxItem
           selected={true}
-          title="List item"
+          title="CSE000762: Annual Reporting"
           number={27}
           progress={0.75}
         />
         <CheckboxItem
           selected={true}
-          title="Very long list item title that didn't fit here"
+          title="CSE000739: APM Form collection process and org..."
           number={10}
           progress={0.2}
         />
 
-        <p>Unselected</p>
+        <p>Corporate</p>
         <CheckboxItem
           selected={false}
-          title="List item"
+          title="CSE000882: European committee"
           number={25}
           progress={0.85}
         />
         <CheckboxItem
           selected={false}
-          title="Very long list item title that goes over multiple lines"
-          number={25}
+          title="CSE000991: M&A analysis"
+          number={8}
           progress={0.85}
         />
       </Section>
@@ -196,7 +195,7 @@ export default function LeftSidebar(props) {
       </Tabs>
       <div className="sidebar-footer">
         <Button fill={true} icon="add">
-          Default button
+          New Case
         </Button>
       </div>
     </div>
