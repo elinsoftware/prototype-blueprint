@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   Icon,
   Tab,
@@ -15,11 +15,9 @@ import useStoreon from "storeon/react";
 
 import Section from "./Section";
 import "./LeftSidebar.css";
-import treeDataStructure from './tree-data'
-import mockdata from "./mock.json";
-import { buildTreeNodes } from "./utils";
+import mockdata from "./mock.js";
 
-const { tasksData } = mockdata;
+const { tasksData, treeData } = mockdata;
 
 const Divider = ({ title }) => (
   <div className="custom-menu-divider">
@@ -87,30 +85,23 @@ const ApprovalItem = ({ title }) => (
 );
 
 const FirstPanel = () => {
-  const [treeNodes, setTreeNodes] = useState([]);
+  const [treeNodes] = useState(treeData);
   const [selectedTreeNode, setSelectedTreeNode] = useState({})
 
-  useEffect(() => {
-    const builtTreeNodes = treeDataStructure.map(node => {
-      if (node.folder) {
-        node.icon = node.isExpanded ? "folder-open" : "folder-close";
-      }
-
-      if (node.childNodes) {
-        node.childNodes = buildTreeNodes(node.childNodes);
-      }
-      return node;
-    });
-
-    setTreeNodes(builtTreeNodes);
-  });
+  // needed for high performance tree update 
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
 
   const handleNodeExpand = treeNode => {
     treeNode.isExpanded = true;
+    treeNode.icon = "folder-open";
+    forceUpdate()
   };
 
   const handleNodeCollapse = treeNode => {
     treeNode.isExpanded = false;
+    treeNode.icon = "folder-close";
+    forceUpdate()
   };
 
   const handleNodeClick = treeNode => {

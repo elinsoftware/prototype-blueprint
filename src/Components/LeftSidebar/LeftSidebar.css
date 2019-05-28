@@ -46,9 +46,17 @@
 }
 
 .bp3-tab-list {
-  /* border-bottom: 2px solid #3a4854; */
+  border-bottom: 2px solid #e4e8eb;
   display: flex;
   justify-content: center;
+}
+
+.bp3-dark .bp3-tab-list {
+  border-color:  #3a4854;
+}
+
+.bp3-tab-indicator-wrapper {
+  height: 32px !important; /* account for 2px border-bottom of .bp3-tab-list */
 }
 
 .bp3-tabs .bp3-tab {
