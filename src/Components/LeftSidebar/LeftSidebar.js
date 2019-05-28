@@ -94,8 +94,6 @@ const FirstPanel = () => {
     const builtTreeNodes = treeDataStructure.map(node => {
       if (node.folder) {
         node.icon = node.isExpanded ? "folder-open" : "folder-close";
-      } else {
-        node.icon = "document";
       }
 
       if (node.childNodes) {
