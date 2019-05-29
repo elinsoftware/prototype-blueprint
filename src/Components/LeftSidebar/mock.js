@@ -136,7 +136,7 @@ const data = {
             {
               "label": "Alex Bono",
               "folder": false,
-              "icon": "document",
+              "icon": "user",
               "id": 719234252,
               "secondaryLabel": (
                 <Icon icon="confirm" intent="success" />
@@ -146,13 +146,13 @@ const data = {
               "label": "Niki Heily",
               "folder": false,
               "id": 19235299,
-              "icon": "document",
+              "icon": "user",
             },
             {
               "label": "Antonio Moreno",
               "folder": false,
               "id": 19536299,
-              "icon": "document",
+              "icon": "user",
             }
           ]
         },
@@ -163,7 +163,7 @@ const data = {
           "icon": "folder-close",
           "id": 9194222292,
           "secondaryLabel": (
-            <Tooltip content="Upload a new document" position={Position.RIGHT}>
+            <Tooltip content="Upload a new document" position={Position.BOTTOM}>
               <Button minimal icon="add" />
             </Tooltip>
           ),

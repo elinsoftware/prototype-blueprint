@@ -90,26 +90,23 @@ const Header = () => {
             }}
           >
             <img src={logo} style={{ height: "30px", marginRight: "5px" }} alt="App logo" />
-            <NavbarHeading>Blueprint Prototype</NavbarHeading>
+            <NavbarHeading>Case Management Portal</NavbarHeading>
           </div>
         </NavbarGroup>
-        <NavbarGroup align={Alignment.LEFT}>
+        <NavbarGroup align={Alignment.LEFT} >
           <NavbarDivider />
-          <InputGroup placeholder="Search data..." />
-          <AnchorButton text="Docs" target="_blank" minimal rightIcon="share" />
-          <AnchorButton
-            text="Github"
-            target="_blank"
-            minimal
-            rightIcon="code"
-          />
+          <InputGroup placeholder="Search data..." style={{width:"250px"}}/>
+          <AnchorButton text="Cases" target="_blank" minimal icon="diagram-tree" style={{marginLeft:"6px"}}/>
+          <AnchorButton text="Tasks" target="_blank" minimal  icon="annotation" active intent="warning" />
+          <AnchorButton text="Approvals" target="_blank" minimal  />
+          <AnchorButton text="Documents" target="_blank" minimal />
           <Popover
             content={exampleMenu}
             position={Position.BOTTOM}
             interactionKind={PopoverInteractionKind.HOVER}
           >
-            <Button minimal icon="airplane">
-              Menu
+            <Button minimal rightIcon="airplane">
+              Advanced Menu
             </Button>
           </Popover>
         </NavbarGroup>

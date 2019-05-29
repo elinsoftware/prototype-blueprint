@@ -9,7 +9,7 @@ export default function ContentFrame(props) {
     <div id="content-frame">
       <div className="content-wrapper">
         <Tooltip content="Tooltip example" position={Position.RIGHT}>
-          <h1>Hello world! I'm a content Frame</h1>
+          <h1>ServiceNow app prototype</h1>
         </Tooltip>
       </div>
     </div>
