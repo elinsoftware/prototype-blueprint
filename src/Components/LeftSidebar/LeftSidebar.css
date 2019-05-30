@@ -22,7 +22,7 @@
 
 
 .left-sidebar-collapsed .left-sidebar {
-  left: -300px;
+  left: -290px;
 }
 
 
@@ -35,6 +35,10 @@
   font-family: "Rajdhani", sans-serif;
 }
 
+.left-sidebar-collapsed .sidebar-header { 
+  padding-right: 20px;
+}
+
 .sidebar-toggle-btn { 
   cursor: pointer;
   transition: .25s ease-in-out;
@@ -43,6 +47,7 @@
 
 .left-sidebar-collapsed .sidebar-toggle-btn { 
   transform: rotate(180deg);
+  padding-right: 20px;
 }
 
 .bp3-dark.left-sidebar {
@@ -177,7 +182,7 @@
 .left-sidebar-collapsed-controls {
   display: none;
   padding-top: 1rem;
-  padding-right: 10px;
+  padding-right: 14px;
   width: 30px;
   margin-left: auto;
 }
