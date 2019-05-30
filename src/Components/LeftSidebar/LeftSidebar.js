@@ -167,7 +167,11 @@ const FirstPanel = () => {
         />
       </Section>
       <Divider />
-      <br />
+      <div className="sidebar-footer">
+        <Button fill={true} icon="add">
+          New Case
+        </Button>
+      </div>
     </>
   );
 };
@@ -197,14 +201,12 @@ export default function LeftSidebar(props) {
         <h2>workspace</h2>
         <Icon icon="menu-closed" className="sidebar-toggle-btn" onClick={handleSidebarToggle} />
       </div>
-      <Tabs onChange={handleTabChange} selectedTabId={tab}>
-        <Tab id="first" title="Active Items" panel={<FirstPanel />} />
-        <Tab id="second" title="History" panel={<SecondPanel />} />
-      </Tabs>
-      <div className="sidebar-footer">
-        <Button fill={true} icon="add">
-          New Case
-        </Button>
+      <div className="sidebar-scroll">
+        <Tabs onChange={handleTabChange} selectedTabId={tab}>
+          <Tab id="first" title="Active Items" panel={<FirstPanel />} />
+          <Tab id="second" title="History" panel={<SecondPanel />} />
+        </Tabs>
+
       </div>
       <div className="left-sidebar-collapsed-controls">
         <Tooltip content="Open Cases" position={Position.RIGHT} boundary="viewport">

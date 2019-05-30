@@ -10,8 +10,10 @@
 .left-sidebar {
   background-color: #f4f8fb;
   bottom: 0;
-  overflow: scroll;
+  display: flex;
+  overflow: hidden;
   flex-grow: 2;
+  flex-direction: column;
   position: absolute;
   left: 0;
   top: 50px;
@@ -20,11 +22,9 @@
   z-index: 5;
 }
 
-
 .left-sidebar-collapsed .left-sidebar {
   left: -290px;
 }
-
 
 .sidebar-header {
   align-items: center;
@@ -35,17 +35,17 @@
   font-family: "Rajdhani", sans-serif;
 }
 
-.left-sidebar-collapsed .sidebar-header { 
+.left-sidebar-collapsed .sidebar-header {
   padding-right: 20px;
 }
 
-.sidebar-toggle-btn { 
+.sidebar-toggle-btn {
   cursor: pointer;
   transition: .25s ease-in-out;
   transform: rotate(0);
 }
 
-.left-sidebar-collapsed .sidebar-toggle-btn { 
+.left-sidebar-collapsed .sidebar-toggle-btn {
   transform: rotate(180deg);
   padding-right: 20px;
 }
@@ -76,6 +76,11 @@
   height: 32px !important;
   /* account for 2px border-bottom of .bp3-tab-list */
 }
+
+.sidebar-scroll {
+  overflow: scroll;
+}
+
 
 .bp3-tabs .bp3-tab {
   text-align: center;
@@ -168,7 +173,7 @@
 }
 
 .sidebar-footer {
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .tree-wrapper .bp3-tree-node-content-1 {
@@ -193,6 +198,6 @@
   flex-direction: column;
 }
 
-.left-sidebar-collapsed-controls > *:not(:last-child) {
+.left-sidebar-collapsed-controls>*:not(:last-child) {
   margin-bottom: 1rem;
 }
