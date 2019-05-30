@@ -8,9 +8,7 @@ export default function ContentFrame(props) {
   return (
     <div id="content-frame">
       <div className="content-wrapper">
-        <Tooltip content="Tooltip example" position={Position.RIGHT}>
-          <h1>ServiceNow app prototype</h1>
-        </Tooltip>
+        <h1>ServiceNow app prototype</h1>
       </div>
     </div>
   );

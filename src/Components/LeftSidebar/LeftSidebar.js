@@ -8,7 +8,10 @@ import {
   Checkbox,
   ProgressBar,
   Button,
-  Classes
+  Classes,
+  AnchorButton,
+  Tooltip,
+  Position
 } from "@blueprintjs/core";
 import useStoreon from "storeon/react";
 
@@ -175,17 +178,24 @@ const SecondPanel = () => {
 
 export default function LeftSidebar(props) {
   const [tab, setTab] = useState("first");
-  const { theme: { darkSide } } = useStoreon('theme')
+  const { dispatch, sidebar: { isCollapsed }, theme: { darkSide } } = useStoreon('theme', 'sidebar')
 
   const handleTabChange = tab => {
     setTab(tab);
   };
 
+  const handleSidebarToggle = () => {
+    dispatch('sidebar/toggleCollapsed')
+  }
+
+  const classes = ['left-sidebar', 'bp3-elevation-2']
+  if (darkSide) classes.push(Classes.DARK)
+
   return (
-    <div className={"left-sidebar bp3-elevation-2 " + (darkSide ? Classes.DARK : '')}>
+    <div className={classes.join(' ')}>
       <div className="sidebar-header ">
         <h2>workspace</h2>
-        <Icon icon="menu-closed" className="icon-btn" />
+        <Icon icon="menu-closed" className="sidebar-toggle-btn" onClick={handleSidebarToggle} />
       </div>
       <Tabs onChange={handleTabChange} selectedTabId={tab}>
         <Tab id="first" title="Active Items" panel={<FirstPanel />} />
@@ -195,6 +205,23 @@ export default function LeftSidebar(props) {
         <Button fill={true} icon="add">
           New Case
         </Button>
+      </div>
+      <div className="left-sidebar-collapsed-controls">
+        <Tooltip content="Open Cases" position={Position.RIGHT} boundary="viewport">
+          <AnchorButton icon="diagram-tree" />
+        </Tooltip>
+        <Tooltip content="Open Tasks" position={Position.RIGHT} boundary="viewport">
+          <AnchorButton icon="annotation" />
+        </Tooltip>
+        <Tooltip content="Open Approvals" position={Position.RIGHT} boundary="viewport">
+          <AnchorButton icon="confirm" />
+        </Tooltip>
+        <Tooltip content="Open Progress" position={Position.RIGHT} boundary="viewport">
+          <AnchorButton icon="timeline-bar-chart" />
+        </Tooltip>
+        <Tooltip content="Open Documents" position={Position.RIGHT} boundary="viewport">
+          <AnchorButton icon="document" />
+        </Tooltip>
       </div>
     </div>
   );

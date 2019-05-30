@@ -1,10 +1,15 @@
 #content-frame {
   background-color: rgba(244, 248, 251, 0.88);
+  bottom: 0;
   position: absolute;
   top: 50px;
   left: 350px;
   right: 0;
-  bottom: 0;
+  transition: .25s ease-in-out;
+}
+
+.left-sidebar-collapsed #content-frame {
+  left: 50px;
 }
 
 .content-wrapper {
