@@ -5,3 +5,16 @@
 .bp3-navbar {
   z-index: 10;
 }
+
+.app-name-container {
+  min-width: 340px;
+  display: flex;
+  align-items: center;
+  margin-left: -15px;
+  padding-left: 1rem;
+  transition: .25s ease-in-out;
+}
+
+.left-sidebar-collapsed .app-name-container {
+  min-width: 220px;
+}

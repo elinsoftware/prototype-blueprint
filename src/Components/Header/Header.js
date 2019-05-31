@@ -80,15 +80,7 @@ const Header = () => {
     <div className={darkTop ? Classes.DARK : ''}>
       <Navbar>
         <NavbarGroup align={Alignment.LEFT}>
-          <div
-            style={{
-              width: 340, // Sidebar's width - NavbarDivider's margin
-              display: "flex",
-              alignItems: "center",
-              marginLeft: "-15px", // account for header padding
-              paddingLeft: "1rem"
-            }}
-          >
+          <div className="app-name-container">
             <img src={logo} style={{ height: "30px", marginRight: "5px" }} alt="App logo" />
             <NavbarHeading>Case Management Portal</NavbarHeading>
           </div>
