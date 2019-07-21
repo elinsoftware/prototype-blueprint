@@ -1,6 +1,6 @@
 # UI prototype for ServiceNow applications
 
-React application - prototype of a complex ServiceNow app UI/UX. Based on Bluprintjs components.
+React application - prototype of a complex ServiceNow app UI/UX. Based on [Bluprintjs](https://blueprintjs.com/) components.
 * Advanced left navigation menu
 * Light/dark themes
 * Top navigation menu with search input
